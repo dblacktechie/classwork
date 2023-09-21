@@ -34,28 +34,32 @@ class MainApp extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Stack(
+                      clipBehavior: Clip.none,
                       children: [
-                        CircleAvatar(
-                          radius: 80,
-                          backgroundImage:
-                              Image.asset('assets/images/jess.png').image,
+                        Container(
+                          height: 100,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.grey,
                         ),
                         Positioned(
-                          right: 10,
-                          top: 10,
-                          child: Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(50)),
-                            child: Icon(
-                              Icons.add,
-                              size: 40,
-                              color: Colors.red,
-                            ),
+                          bottom: -20,
+                          left: 20,
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                radius: 50,
+                                backgroundImage:
+                                    Image.asset('assets/images/jess.png').image,
+                              ),
+                              Column(
+                                children: [
+                                  Text('Jessica Udeh'),
+                                  Text('Mobile Developer'),
+                                ],
+                              )
+                            ],
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
